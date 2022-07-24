@@ -1,9 +1,10 @@
 import type { NextPage } from 'next'
+import Header from '../layouts/header'
 
 const Home: NextPage = () => {
   return (
-    <div className="flex min-h-screen flex-col items-center justify-center py-2">
-     
+    <div className='bg-gray-500 flex min-h-screen'>
+      <Header />
     </div>
   )
 }
