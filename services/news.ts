@@ -2,6 +2,7 @@ import { createApi, fetchBaseQuery } from '@reduxjs/toolkit/query/react'
 import { News } from '../types/types'
 
 export const BASE_API = 'f19e6da990164fc48e08d89c22e76b32'
+
 type NewsArticles = {
     articles: News[]
 }

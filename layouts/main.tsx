@@ -6,7 +6,7 @@ const Main = () => {
   return (
     <div className='flex justify-between items-center'>
         <TopNews />
-        <NewsByCategory />
+        <NewsByCategory category='sport'/>
     </div>
   )
 }

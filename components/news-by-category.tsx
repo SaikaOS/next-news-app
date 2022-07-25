@@ -1,18 +1,19 @@
 import React from 'react'
 import { useGetNewsFromCategoryQuery } from '../services/news'
+import NewsItem from './news-item'
 
-const NewsByCategory = () => {
-    const {data} = useGetNewsFromCategoryQuery('sport')
+type Category = {
+  category:string
+}
+
+const NewsByCategory = (category: Category) => {
+    const {data, isLoading} = useGetNewsFromCategoryQuery(category.category)
   return (
-    <div className='grid grid-cols-2 border-2 border-black'>
+    <div className='grid grid-cols-2'>
+      {isLoading && <p className='text-red-300'>Loading...</p>}
         {data?.slice(0, 4).map(news => (
-            <div>
-                <h1>{news.title}</h1>
-                <h2>{news.description}</h2>
-                <p>{news.author}</p>
-                <a href={news.url}>Read more</a>
-                <img src={news.urlToImage} alt="img" />
-            </div>
+            <NewsItem key={news.url} title={news.title} author={news.author} 
+            description={news.description} url={news.url} urlToImage={news.urlToImage}/>
         ))}
     </div>
   )
