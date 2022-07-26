@@ -13,7 +13,7 @@ const NewsByCategory = (category: Category) => {
       {isLoading && <p className='text-red-300'>Loading...</p>}
         {data?.slice(0, 4).map(news => (
             <NewsItem key={news.url} title={news.title} 
-            urlToImage={news.urlToImage}/>
+            urlToImage={news.urlToImage} url={news.url}/>
         ))}
     </div>
   )
