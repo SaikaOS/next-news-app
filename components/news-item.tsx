@@ -1,15 +1,14 @@
-import React from "react";
+import React, { FC } from "react";
 import { News } from "../types/types";
 
-const NewsItem = (item: News) => {
+const NewsItem:FC<News> = (item: News) => {
   return (
-    <div>
+    <div className="border-2 border-black">
       <h1>{item.title}</h1>
       <h2>{item.description}</h2>
       <p>{item.author}</p>
-      <a href={item.url}>Read more</a>
       {item?.urlToImage && (
-        <img src={item?.urlToImage} alt="img" height={100} width={100} />
+        <img src={item?.urlToImage} alt="img" height={200} width={200} />
       )}
     </div>
   );

@@ -1,7 +1,7 @@
 export type News = {
-    author: string | undefined;
+    author?: string | undefined;
     title: string | undefined;
-    description: string | undefined;
-    url: string | undefined;
+    description?: string | undefined;
+    url?: string | undefined;
     urlToImage: string | undefined;
 }

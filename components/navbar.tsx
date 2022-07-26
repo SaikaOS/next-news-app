@@ -1,10 +1,16 @@
-import React from 'react'
+import React, { FC } from 'react'
 
-const Navbar = () => {
+type LinksType = {
+  links: string[]
+}
+
+const Navbar:FC<LinksType> = ({links}) => {
   return (
     <nav>
-        <ul>
-            <li></li>
+        <ul className='flex justify-between items-center w-[570px]'>
+            {links.map(link => (
+              <li key={link}>{link}</li>
+            ))}
         </ul>
     </nav>
   )
