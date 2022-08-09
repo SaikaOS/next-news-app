@@ -1,5 +1,5 @@
 import React, { FC } from 'react'
-import { useAppDispatch, useAppSelector } from '../hooks/hooks'
+import { useAppDispatch } from '../hooks/hooks'
 import { setScreen } from '../store/screenSlice'
 
 type LinksType = {
@@ -8,7 +8,6 @@ type LinksType = {
 
 const Navbar:FC<LinksType> = ({links}) => {
   const dispatch = useAppDispatch()
-  const state = useAppSelector(state => state.screen)
   
   const handleClick = (link: string) => {
       dispatch(setScreen(link))
