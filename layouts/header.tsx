@@ -1,6 +1,5 @@
 import React, { ChangeEvent } from 'react'
 import {BsSearch} from 'react-icons/bs'
-import HeaderNav from '../components/header-nav'
 import { useAppDispatch, useAppSelector } from '../hooks/hooks'
 import { setDefaultNews, setText } from '../store/newsSlice'
 
@@ -24,7 +23,6 @@ const Header = () => {
         onChange={handleChange}
         />
       <BsSearch className='absolute left-10'/>
-        <HeaderNav />
     </div>
   )
 }
